@@ -7,18 +7,22 @@ import com.sun.source.doctree.SystemPropertyTree;
 public class Main {
     public static void main(String[] args) {
         Person p1 = new Person();
-        p1.maxSpeed = 100; // 이 코드는 실질적으로 'Person.maxSpeed = 100;'으로 처리됨
-        Person p2 = new Person();
-        p2.maxSpeed = 200;
-        Person p3 = new Person();
-        p3.maxSpeed = 300; // 따라서 마지막 저장값이 프린트 됨
+        p1.나이 = 40;
+        p1.자기소개();
 
-        System.out.println(p1.maxSpeed); // 이 코드는 실질적으로 'System.out.println(Person.maxSpeed);'와 같음
-        System.out.println(p2.maxSpeed);
-        System.out.println(p3.maxSpeed);
+        Person.인류평균나이 = 37;
+        Person.인류평균나이소개();
     }
 }
 
 class Person {
-    static int maxSpeed; // 왜냐? static이기 때문에 각각의 개체에 maxSpeed 변수가 존재 X
+    int 나이;
+    static int 인류평균나이;
+
+    void 자기소개() {
+        System.out.println("제 나이는 " + this.나이 + "살 입니다.");
+    }
+    static void 인류평균나이소개() {
+        System.out.println("인류평균나이는 " + 인류평균나이 + "살 입니다.");
+    }
 }
