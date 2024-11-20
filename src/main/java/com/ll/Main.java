@@ -6,57 +6,17 @@ import com.sun.source.doctree.SystemPropertyTree;
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 public class Main {
     public static void main(String[] args) {
-        System.out.println("== 흰 고양이 ==");
-        흰고양이 a = new 흰고양이();
-        a.숨쉬다();
-        a.야옹();
-        a.목숨을_늘린다();
-
-        System.out.println("== 검은 고양이 ==");
-        검은고양이 b = new 검은고양이();
-        b.숨쉬다();
-        b.야옹();
-        b.미래를_예지하다();
-
-        System.out.println("== 붉은 고양이 ==");
-        붉은고양이 c = new 붉은고양이();
-        c.숨쉬다();
-        c.야옹();
-        c.빠르게_이동();
+        사람 a사람 = new 사람();
+        a사람.숨쉬다();
     }
 }
 
-class 고양이 {
+class 동물 {
     void 숨쉬다() {
         System.out.println("숨쉬다!!");
     }
-
-    void 야옹() {
-        System.out.println("야옹");
-    }
-
-    void 뛰어넘다() {
-        System.out.println("뛰어넘다");
-    }
 }
 
-// 공통된 명령어를 상속(extends)를 통해 하나로 묶음
-// 왜 씀? -> 코드 굳이 여러번 쓰지 않아도 됨
+class 사람 extends 동물 {
 
-class 흰고양이 extends 고양이 {
-    void 목숨을_늘린다() {
-        System.out.println("목숨을_늘린다");
-    }
-}
-
-class 검은고양이 extends 고양이 {
-    void 미래를_예지하다() {
-        System.out.println("미래를_예지하다");
-    }
-}
-
-class 붉은고양이 extends 고양이 {
-    void 빠르게_이동() {
-        System.out.println("빠르게_이동");
-    }
 }
