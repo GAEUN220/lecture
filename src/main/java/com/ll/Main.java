@@ -10,30 +10,34 @@ public class Main {
         삼성Tv a삼성Tv = new 삼성Tv();
         LGTv aLGTv = new LGTv();
 
-        a샤오미Tv.켜기();
-        // 출력 => 샤오미Tv 켜집니다.
-        a샤오미Tv.끄기();
-        // 출력 => 샤오미Tv 꺼집니다.
-        a샤오미Tv.vr켜기();
-        // 출력 => 샤오미Tv vr켜기!
+        표준Tv a표준Tv;
 
-        a삼성Tv.켜기();
-        // 출력 => 삼성Tv 켜집니다.
-        a삼성Tv.끄기();
-        // 출력 => 삼성Tv 꺼집니다.
-        a삼성Tv.ar켜기();
-        // 출력 => 삼성Tv ar켜기!
+        a표준Tv = a샤오미Tv;
+        a표준Tv.켜기();
+        a표준Tv.끄기();
 
-        aLGTv.켜기();
-        // 출력 => LGTv 켜집니다.
-        aLGTv.끄기();
-        // 출력 => LGTv 꺼집니다.
-        aLGTv.게임모드전환();
-        // 출력 => LGTv 게임모드전환!
+        a표준Tv = a삼성Tv;
+        a표준Tv.켜기();
+        a표준Tv.끄기();
+
+        a표준Tv = aLGTv;
+        a표준Tv.켜기();
+        a표준Tv.끄기();
+
+        LGTv aLGTv2 = (LGTv)a표준Tv;
+        aLGTv2.게임모드전환();
+
     }
 }
 
-class 샤오미Tv {
+abstract class 표준Tv {
+    abstract void 켜기();
+
+    abstract void 끄기();
+}
+
+
+class 샤오미Tv extends 표준Tv {
     void 켜기() {
         System.out.println("샤오미Tv 켜집니다.");
     }
@@ -47,7 +51,7 @@ class 샤오미Tv {
     }
 }
 
-class 삼성Tv {
+class 삼성Tv extends 표준Tv {
     void 켜기() {
         System.out.println("삼성Tv 켜집니다.");
     }
@@ -61,7 +65,7 @@ class 삼성Tv {
     }
 }
 
-class LGTv {
+class LGTv extends 표준Tv {
     void 켜기() {
         System.out.println("LGTv 켜집니다.");
     }
